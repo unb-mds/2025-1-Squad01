@@ -49,7 +49,7 @@ app.post('/auth/register', async (req, res) => {
   res.status(201).json({ msg: 'Usuário registrado com sucesso!' })
 })
 
-mongoose.connect(`mongodb+srv://samuelvlobo:${dbPassword}@cluster0.iqw8sxz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`).then(() => {
+mongoose.connect(`mongodb+srv://${dbUser}:${dbPassword}@cluster0.iqw8sxz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`).then(() => {
     app.listen(3000)
     console.log('Coneccao ativa!')
 }).catch((err) => console.log(err))
